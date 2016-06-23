@@ -1,0 +1,10 @@
+{
+ "name": "nodejs-apirest",
+ "version": "1.0.0",
+ "dependencies": {
+ "body-parser": "~1.13.2",
+ "express": "~4.13.1",
+ "method-override": "^2.1.2",
+ "mongoose": "~3.6.11"
+ }
+}
