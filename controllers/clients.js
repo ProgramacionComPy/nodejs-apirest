@@ -30,7 +30,7 @@ exports.add = function(req, res) {
 	});
 	client.save(function(err, client) {
 		if(err) return res.send(500, err.message);
-    res.status(200).jsonp(client);
+    	res.status(200).jsonp(client);
 	});
 };
 
@@ -42,7 +42,7 @@ exports.update = function(req, res) {
 		client.genre = req.body.genre;
 		client.save(function(err) {
 			if(err) return res.send(500, err.message);
-      res.status(200).jsonp(client);
+      		res.status(200).jsonp(client);
 		});
 	});
 };
@@ -52,7 +52,7 @@ exports.delete = function(req, res) {
 	Client.findById(req.params.id, function(err, client) {
 		client.remove(function(err) {
 			if(err) return res.send(500, err.message);
-      res.status(200);
-		})
+      		res.json({ message: 'Successfully deleted' });
+		});
 	});
 };
