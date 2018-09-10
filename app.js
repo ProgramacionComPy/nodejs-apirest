@@ -5,7 +5,7 @@ var methodOverride = require("method-override");
 var app = express();
 
 // Connection to DB
-mongoose.connect('mongodb://localhost/clients', function(err, res) {
+mongoose.connect('mongodb://localhost/clients', { useNewUrlParser: true }, function(err, res) {
  if(err) throw err;
  console.log('Connected to Database');
 });
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(methodOverride());
 
 // Import Models and Controllers
-var models     = require('./models/client')(app, mongoose);
+var models     = require('./models/client');
 var ClientCtrl = require('./controllers/clients');
 
 var router = express.Router();
